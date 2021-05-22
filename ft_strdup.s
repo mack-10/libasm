@@ -3,7 +3,6 @@ section .text
 	extern _ft_strlen
 	extern _ft_strcpy
 	extern _malloc
-	extern ___error
 
 _ft_strdup :
 	call _ft_strlen
@@ -19,9 +18,4 @@ _ft_strdup :
 	ret
 
 err :
-	push rax
-	call ___error
-	pop rdx
-	mov [rax], rdx
-	mov rax , -1
 	ret
