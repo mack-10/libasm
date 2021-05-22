@@ -12,8 +12,8 @@ _ft_strdup :
 	call _malloc
 	cmp rax, 0
 	je err
-	pop rsi
 	mov rdi, rax
+	pop rsi
 	call _ft_strcpy
 	ret
 
