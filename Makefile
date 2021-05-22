@@ -15,11 +15,11 @@ OBJ		=	$(SRC:.s=.o)
 # LIB
 LIB		=	ar rcs
 
-
-all : $(NAME) test
+all : $(NAME)
+# all : $(NAME) test
 
 %.o : %.s
-	$(C) $(CFLAG) $<
+	$(C) $(CFLAG) $< -o $@
 
 $(NAME) : $(OBJ)
 	$(LIB) $(NAME) $^
@@ -29,9 +29,9 @@ clean :
 
 fclean : clean
 	rm $(NAME)
-	rm test
+	# rm test
 
 re : fclean all
 
-test :
-	gcc -Wall -Wextra -Werror main.c $(NAME) -o test -L. -lasm
+# test :
+# 	gcc -Wall -Wextra -Werror main.c $(NAME) -o test -L. -lasm
