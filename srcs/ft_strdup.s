@@ -3,11 +3,12 @@ section .text
 	extern _ft_strlen
 	extern _ft_strcpy
 	extern _malloc
+	extern ___error
 
 _ft_strdup :
+	push rdi
 	call _ft_strlen
 	inc rax
-	push rdi
 	mov rdi, rax
 	call _malloc
 	cmp rax, 0

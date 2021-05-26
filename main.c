@@ -6,7 +6,7 @@
 /*   By: sujeon <sujeon@student.42.kr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 03:03:09 by sujeon            #+#    #+#             */
-/*   Updated: 2021/05/26 18:32:10 by sujeon           ###   ########.fr       */
+/*   Updated: 2021/05/26 23:46:16 by sujeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ int	main(void)
 	printf("\n---------read---------\n");
 	ret1 = ft_read(0, dst, 2);
 	ret2 = read(0, dst, 2);
+	
 	printf(RED "ft |%d\n" RESET, ret1);
 	printf("-> |%d\n", ret2);
 	ret1 = ft_read(-1, dst, 2);
