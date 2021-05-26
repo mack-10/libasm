@@ -19,7 +19,10 @@ OBJ			=	$(addprefix $(OBJ_PATH), $(SRC_NAME:.s=.o))
 LIB		=	ar rcs
 
 # COMMAND
-all : $(NAME)
+all : mkdir $(NAME)
+
+mkdir :
+	mkdir $(OBJ_PATH)
 
 $(OBJ_PATH)%.o : $(SRC_PATH)%.s
 	$(C) $(CFLAG) $< -o $@
@@ -28,7 +31,7 @@ $(NAME) : $(OBJ)
 	$(LIB) $(NAME) $^
 
 clean :
-	rm -rf $(OBJ_PATH)*
+	rm -rf $(OBJ_PATH)
 
 fclean : clean
 	rm $(NAME)
