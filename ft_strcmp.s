@@ -8,17 +8,22 @@ _ft_strcmp :
 	jmp	cmp
 
 cmp :
-	mov al, BYTE [rsi + rcx]
-	mov bl, BYTE [rdi + rcx]
+	mov al, BYTE [rdi + rcx]
+	mov bl, BYTE [rsi + rcx]
 	cmp	al, bl
-	jne diff
+	ja	big
+	jb	small
 	cmp	al, 0
 	je	same
 	inc	rcx
 	jmp cmp
 
-diff :
-	sub rax, rbx
+big :
+	mov	rax, 1
+	ret
+
+small :
+	mov rax, -1
 	ret
 
 same :

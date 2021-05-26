@@ -6,7 +6,7 @@
 /*   By: sujeon <sujeon@student.42.kr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 03:03:52 by sujeon            #+#    #+#             */
-/*   Updated: 2021/05/11 07:08:01 by sujeon           ###   ########.fr       */
+/*   Updated: 2021/05/26 18:26:34 by sujeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <fcntl.h>
+# include <unistd.h>
+# include <string.h>
+
+# define RED "\x1b[31m"
+# define RESET "\x1b[0m"
 
 size_t		ft_strlen(const char *s);
 char		*ft_strcpy(char *dst, const char *src);
